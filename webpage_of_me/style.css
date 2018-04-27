@@ -1,63 +1,162 @@
-/*@media screen and (max-width: 1024px) {}
 
-@media screen and (max-width: 768px) {}*/
-
-div aa {background-color: hsl(193, 48%, 61%);}    /* base color */
-div bb {background-color: hsl(193, 51%, 42%);}    /* dark color */
-div cc {background-color: hsl(194, 19%, 71%);}    /* washed color */
-div dd {background-color: hsl(220, 1%, 96%);}    /* white-ish color */
-div ee {background-color: hsl(240, 1%, 87%);}    /* grey white color */
-
+/* {background-color: hsl(193, 48%, 61%);}    base color */
+/* {background-color: hsl(193, 51%, 42%);}    dark color Hex: 458B74 */
+/* {background-color: hsl(194, 19%, 71%);}    washed color */
+/* {background-color: hsl(220, 1%, 96%);}     white-ish color */
+/* {background-color: hsl(240, 1%, 87%);}     grey white color */
 
 * {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
-    
+    text-decoration: none;
   }
 body {
     width: 80%;
-    font-size: 16px;
+    font-size: 14px;
     background-color: hsl(240, 1%, 87%);
     margin: 0 auto;
-    font-family: 'Noto Sans', sans-serif;
+    font-family: 'Muli', sans-serif;
 }
-.clear {
+/* .clear {
     clear:both;
+} */
+/*Laptop monitors and larger*/
+@media screen and (min-width: 768px) {
+    body {
+        font-size: 16px;
+    }
 }
+/*for nonsense FOUR K RESOLUTION*/
+@media screen and (min-width: 2560px) {
+    * {
+        font-size: 40px;
+    }
+}
+
 /*image formatting*/
 .project_preview{
     width: 100%;
-    padding: 0 1rem .5rem 1rem;
+    opacity: 0.6;
+    border-radius: 10%;
+}
+.dimm {
+    background:linear-gradient(to bottom, rgba(15,39,46,0.5), rgba(245,245,245,.95));
+    margin: 0 auto .5rem auto;
+    width:90%;
+    border-radius: 10%;
+    margin-top: 1rem;
 }
 .photo_me {
-    border-radius: 2rem;
-    max-width: 90%;
+    border-radius: 40%;
+    width: 90%;
     display: block;
     margin: 0 auto;
     padding: 1rem 0;
 }
+/* .tinted_project {
+    background:linear-gradient(to bottom, rgba(15,39,46,0.5), rgba(245,245,245,.95)), url("images/DogAdoption.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 0 auto .5rem auto;
+    width:90%;
+    height:20rem;
+} */
+/*Images for tablets*/
+@media screen and (min-width: 500px) and (max-width: 768px) {
+    .photo_me {
+        border-radius: 20%;
+        display: inline-block;
+        width: 65%;
+        padding: .75rem ;
+    }
+}
+/*Images for Laptop screens and more*/
+@media screen and (min-width: 768px) {
+    .photo_me {
+        border-radius: 20%;
+        display: inline-block;
+        width: 45%;
+        padding: .75rem ;
+        vertical-align:top;
+    }
+}
 /*formatting for the navigation bar*/
-nav ul {
+.navigation ul {
     list-style-type: none;
     margin: 1rem 0 1rem 0;
+    text-align: center;
 }
-nav li {
+.navigation li {
     display: inline-block;
     width: 30%;
 }
-nav a {
+.navigation a {
     display: block;
     text-align: center;
-    background-color: hsl(193, 48%, 61%);
+    background-color: hsl(193, 51%, 42%);
     text-decoration: none;
     padding: 0.35rem;
     color: hsl(220, 1%, 96%);
     border-radius: .5rem;
-}       
+    font-weight:800;
+}
 .selected {
-    background-color: hsl(193, 51%, 42%);
+    background-color: hsl(193, 48%, 61%);
     color: white;
+}
+.navigation  {
+    margin: 0 auto;
+    max-width: 90%;
+}
+
+/*Picture Nav Links*/
+.icon_nav {
+    display:block;
+    text-align:center;
+    padding: 1rem 0;
+}
+.icon_nav a{
+    width:20%;
+    display: inline-block;
+}
+.icon {
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    width:100%;
+    height:50px;
+}
+.coroflot {
+    background-image: url("images/iconmonstr-briefcase-5-240.png");
+}
+.linkedin {
+    background-image: url("images/iconmonstr-linkedin-3-240.png");
+}
+.github{
+    background-image: url("images/iconmonstr-github-3-240.png");
+}
+.email{
+    background-image: url("images/iconmonstr-email-10-240.png");
+}
+@media screen and (max-width: 396px) {
+    .navigation li {
+        display: block;
+        width: 100%;
+    }
+    .icon {
+        height:40px
+    }
+    .nav_button {
+        padding: .1rem 0;
+    }
+}
+/*FOUR K RESOLUTION*/
+@media screen and (min-width: 2560px) {
+    .icon {
+        height:100px;
+    }
 }
 
 /*heading fixes*/
@@ -67,9 +166,36 @@ h5{
 }
 h6{
     font-size: 1rem;
+    /* display: inline-block; */
+
 }
 h1, h2, h3, h4, h5, h6 {
-    padding: 0 1rem;
+    padding: 0 1rem;   
+}
+h2{
+    font-size:2rem;
+    font-weight:800;
+    padding: 2rem 0 0 0;
+}
+/*Formatting text for laptop screens and more*/
+@media screen and (min-width: 768px) {
+    h1, h3, h4, h5, h6 {
+        padding: 0 1rem 0 1rem;
+        /* display: inline-block; */
+    }
+    h3 {
+        font-size: 1.5rem;
+    }
+    h1 {
+        font-size: 2rem;
+        padding:1rem 0 0 0;
+    }
+    h2 {
+        padding: 2rem 1rem 0 1rem;
+    }
+    h5{
+        padding: 0 0 0 2rem;
+    }
 }
 
 /*purely text-content formatting*/
@@ -80,15 +206,43 @@ h1, h2, h3, h4, h5, h6 {
 }
 p {
     text-indent: 1rem;
-    padding: 0 1rem;
+    padding: 0 .5rem 0 1rem;
+}
+.resume {
+    margin: 0 auto;
+}
+.resume_header {
+    margin: 0 auto;
+    text-align: center;
+}
+.slider {
+    display:block;
+}
+@media screen and (min-width: 768px) {
+    p {
+        text-indent: 1rem;
+        padding:0 1rem;
+        display: inline-block;
+    }
+    .slider {
+        display: inline-block;
+        width: 50%;
+        vertical-align:top;
+    }
+    
 }
 .right_align {
-    margin: 0;
+    display: inline-block;
+    width:100%;
     text-align:right;
+}
+.old_jobs {
+    padding: 0 1rem;
+    margin: 1rem 0 0 0;
 }
 .project_title {
     border-radius: .5rem;
-    background-color: hsl(193, 48%, 61%);
+    background-color: hsl(193, 51%, 42%);
     text-align: center;
     padding: .25rem;
     font-weight: bold;
@@ -98,20 +252,46 @@ p {
 }
 .old_jobs p {
     font-size: .9rem;
-    text-indent: 0;
-    margin:.25rem 0 .75rem 0;
+    text-indent: .5rem;
+    margin:0 0 .75rem 0;
+}
+@media screen and (min-width: 992px) {
+    .old_jobs, .indent_float {
+        width: 60%;
+        margin: 0 auto;
+    }
+    .resume_header, .resume_education, .resume_skills, .resume_work {
+        width:75%;
+        margin: 0 auto;
+    }
 }
 
 /*link formatting*/
 .outlink {
     text-align: center;
     background-color: hsl(194, 19%, 71%);
-    max-width: 90%;
-    margin: .5rem auto;
+    margin: .25rem auto;
     border-radius: .5rem;
+    width:60%;
+    color:black;
+    font-weight:800;
+    padding:0;
+    font-size: 1rem;
 }
-.outlink a {
-    display: inline-block;
+/* a:hover {   
     text-decoration: none;
-    color:white;
+    color:black;
+} */
+@media screen and (min-width: 768px) {
+    .outlink {
+        display: inline-block;
+        width:45%;
+        padding: .5rem 0;
+        margin: 1rem 0 0 0;
+        font-size: 1.25rem;
+    }
+    .center_help {
+        display: block;
+        text-align: center;
+    }
 }
